@@ -1,0 +1,20 @@
+.model tiny
+
+.data              
+    
+.code
+
+
+
+    .startup
+
+        MOV     dl, 9+48              ;se le suma 48 ya que en la tabla ascci los numeros empiezan
+        MOV     ah, 02h                       ;desde el numero 48
+        INT     21h
+        
+        
+        MOV     ax,0c07h
+        INT     21h       
+        
+    .exit
+end

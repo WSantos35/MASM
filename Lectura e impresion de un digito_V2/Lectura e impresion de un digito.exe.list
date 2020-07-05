@@ -1,0 +1,104 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+Lectura e impresion de un digito.exe -- emu8086 assembler version: 4.08  
+ 
+[ 29/07/2019  --  4:51:11 p. m. ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       ;Programa que lee un digito
+[   2]        :                                       .model small
+[   3]        :                                       
+[   4]        :                                       .stack
+[   5]        :                                       
+[   6]        :                                       .data
+[   7]        :                                       
+[   8]    0100: 0A 0D 49 6E 67 72 65 73 65 20 75 6E   msg db 10,13,"Ingrese un numero entre 0-9","$"
+                20 6E 75 6D 65 72 6F 20 65 6E 74 72 
+                65 20 30 2D 39 24                   
+[   9]    011E: 0A 0D 4E 75 6D 65 72 6F 20 69 6E 67   cadena  db 10,13,"Numero ingresado: ","$"
+                72 65 73 61 64 6F 3A 20 24          
+[  10]    0133: 00                                    num db ?
+[  11]        :                                       
+[  12]        :                                       .code
+[  13]        :                                       
+[  14]        :                                       
+[  15]    0140: BA 10 00 8E DA                        .startup
+[  16]        :                                       
+[  17]    0145: BA 00 00                              MOV     dx, offset msg
+[  18]    0148: B4 09                                 MOV     ah, 09h
+[  19]    014A: CD 21                                 INT     21h
+[  20]        :                                       
+[  21]        :                                       ;LECTURA E IMPRESION DEL DIGITO
+[  22]    014C: B4 01                                 MOV     ah, 01h
+[  23]    014E: CD 21                                 INT     21h
+[  24]        :                                       
+[  25]    0150: 2C 30                                 sub     al,30h
+[  26]    0152: A2 33 00                              MOV     num, al
+[  27]        :                                       ;FIN LECTURA E IMPRESION DEL DIGITO
+[  28]        :                                       
+[  29]    0155: B4 09                                 MOV     ah, 09h
+[  30]    0157: BA 1E 00                              MOV     dx, offset cadena
+[  31]    015A: CD 21                                 INT     21h
+[  32]        :                                       
+[  33]        :                                       
+[  34]    015C: B4 02                                 MOV     ah, 02h
+[  35]    015E: 8A 16 33 00                           MOV     dl, num
+[  36]    0162: 80 C2 30                              ADD     dl, 30h
+[  37]    0165: CD 21                                 INT     21H
+[  38]        :                                       
+[  39]        :                                       
+[  40]    0167: B8 07 0C                              MOV     ax, 0c07h
+[  41]    016A: CD 21                                 INT     21h
+[  42]        :                                       
+[  43]    016C: B8 00 4C CD 21                        .exit
+[  44]        :                                       
+[  45]        :                                       end
+[  46]        :                                       
+ 
+===================================================================================================
+ 
+EXE HEADER - bytes from 0000 to 01FF inclusive.
+
+0000: 4D      -   exe signature (M)
+0001: 5A      -   exe signature (Z)
+0002: 71      -   bytes on last page (l.byte)
+0003: 01      -   bytes on last page (h.byte)
+0004: 02      -   512 byte pages in file (l.byte)
+0005: 00      -   512 byte pages in file (h.byte)
+0006: 01      -   relocations (l.byte)
+0007: 00      -   relocations (h.byte)
+0008: 20      -   paragraphs in header (l.byte)
+0009: 00      -   paragraphs in header (h.byte)
+000A: 00      -   minimum memory (l.byte)
+000B: 00      -   minimum memory (h.byte)
+000C: FF      -   maximum memory (l.byte)
+000D: FF      -   maximum memory (h.byte)
+000E: 00      -   SS - stack segment (l.byte)
+000F: 00      -   SS - stack segment (h.byte)
+0010: 00      -   SP - stack pointer (l.byte)
+0011: 01      -   SP - stack pointer (h.byte)
+0012: CF      -   check sum (l.byte)
+0013: 4F      -   check sum (h.byte)
+0014: 00      -   IP - instruction pointer (l.byte)
+0015: 00      -   IP - instruction pointer (h.byte)
+0016: 14      -   CS - code segment (l.byte)
+0017: 00      -   CS - code segment (h.byte)
+0018: 1E      -   relocation table adress (l.byte)
+0019: 00      -   relocation table adress (h.byte)
+001A: 00      -   overlay number (l.byte)
+001B: 00      -   overlay number (h.byte)
+001C: 01      -   signature (l.byte)
+001D: 00      -   signature (h.byte)
+001E: 01      -   relocation table - offset inside segment (l.byte)
+001F: 00      -   relocation table - offset inside segment (h.byte)
+0020: 14      -   relocation table - segment anchor (l.byte)
+0021: 00      -   relocation table - segment anchor (h.byte)
+0022 to 01FF  -   reserved relocation area  (00) 
+
+
+
+
+===================================================================================================

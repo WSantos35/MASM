@@ -1,0 +1,32 @@
+;Programa que imprime 10 veces una cadena como un ciclo for
+.model small
+
+.stack
+
+.data
+cont    db 0                            ;inicializamos nuestro contador con 0
+msg     db 10,13,"!hola que tal!$"      ;cadena a imprimir
+
+.code
+
+
+.startup
+
+
+ciclo:
+CMP  cont,10             ;comparamos cont con 10
+JE   salir               ;si contador=10 se ejecuta este salto
+MOV  ah, 09h             ;en caso contrario va a imprimir la cadena
+MOV  dx, offset msg
+INT  21h
+INC  cont                ;incrementamos contador
+JMP  ciclo               ;regresamos al inicio de la etiqueta ciclo
+
+
+salir:
+MOV     ax, 0c07h
+INT     21h
+.exit
+
+end
+

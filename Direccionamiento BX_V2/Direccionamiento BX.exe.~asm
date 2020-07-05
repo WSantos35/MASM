@@ -1,0 +1,25 @@
+.model small
+
+.stack
+
+.data
+
+.code
+
+
+.startup
+MOV     ax, 0b800h
+MOV     ds, ax
+MOV     cl, "a"
+MOV     ch, 11011111b    ;para este caso la parte alta representa el color de fondo y color de letra
+MOV     bx, 15eh
+MOV     [bx], cx         ;copia contenido de cx en la direccion B800:015E DS:BX
+
+
+
+MOV     ax, 0c07h
+INT     21h
+.exit
+
+end
+

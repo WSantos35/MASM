@@ -1,0 +1,10 @@
+bin\dot -Tpng ARB0.DOT -o arb0.png
+bin\dot -Tpng ARB1.DOT -o arb1.png
+bin\dot -Tpng ARB2.DOT -o arb2.png
+bin\dot -Tpng ARB3.DOT -o arb3.png
+bin\dot -Tpng ARB4.DOT -o arb4.png
+bin\dot -Tpng ARB5.DOT -o arb5.png
+bin\dot -Tpng ARB6.DOT -o arb6.png
+bin\dot -Tpng ARB7.DOT -o arb7.png
+bin\dot -Tpng ARB8.DOT -o arb8.png
+bin\dot -Tpng ARB9.DOT -o arb9.png

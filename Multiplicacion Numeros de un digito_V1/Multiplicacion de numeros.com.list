@@ -1,0 +1,51 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+Multiplicacion de numeros.com -- emu8086 assembler version: 4.08  
+ 
+[ 28/07/2019  --  2:00:50 p. m. ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       ;Programa que multiplica dos numeros, MUL funciona de forma diferente que ADD ya que mul multiplica
+[   2]        :                                       ;lo que esta en el registro 'al' con el parametro que se le manda a MUL
+[   3]        :                                       
+[   4]        :                                       .model tiny
+[   5]        :                                       
+[   6]    0100: EB 00                                 .data
+[   7]        :                                       
+[   8]        :                                       
+[   9]        :                                       
+[  10]    0102:                                       .code
+[  11]        :                                       
+[  12]    0102:                                       .startup
+[  13]        :                                       
+[  14]        :                                       ;se le agregan los datos a los registros
+[  15]    0102: B0 03                                 MOV     al, 3
+[  16]    0104: B3 02                                 MOV     bl, 2
+[  17]        :                                       
+[  18]        :                                       ;se realiza la multiplicacion al=al*bl
+[  19]    0106: F6 E3                                 MUL     bl
+[  20]        :                                       
+[  21]        :                                       ;se cambia mueve el dato del registro al a bl y se le suma 48
+[  22]    0108: 8A D0                                 MOV     dl, al
+[  23]    010A: 80 C2 30                              ADD     dl, 48
+[  24]        :                                       
+[  25]        :                                       ;se imprime en pantalla el valor
+[  26]    010D: B4 02                                 MOV     ah, 02h
+[  27]    010F: CD 21                                 INT     21h
+[  28]        :                                       
+[  29]    0111: B8 07 0C                              MOV     ax,0c07h
+[  30]    0114: CD 21                                 INT     21h
+[  31]    0116: B8 00 4C CD 21                        .exit
+[  32]        :                                       end
+[  33]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================

@@ -1,0 +1,33 @@
+.model small
+
+.stack
+
+.data
+
+msg db 10,13,7,"Ingrese Cadena: ","$"
+cadena db 100,?,100 dup(?),"$"
+
+.code
+
+.startup
+
+MOV     dx, offset msg
+MOV     ah, 09h
+INT     21h
+
+
+MOV     ah, 0ah
+MOV     dx, offset[cadena]
+INT     21h
+
+MOV     dx, offset[cadena]
+MOV     ah, 09h
+INT     21h
+
+MOV     ax, 0c07h
+INT     21h
+
+.exit
+
+end
+

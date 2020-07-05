@@ -1,0 +1,51 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+resta de dos numeros.com -- emu8086 assembler version: 4.08  
+ 
+[ 28/07/2019  --  2:21:34 p. m. ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       ;Programa que resta dos numeros para un solo digito, cuando existen datos negativos
+[   2]        :                                       ;el programa guarda el resultado en los registros como complemento a 2
+[   3]        :                                       .model tiny
+[   4]        :                                       
+[   5]    0100: EB 00                                 .data
+[   6]        :                                       
+[   7]        :                                       
+[   8]        :                                       
+[   9]    0102:                                       .code
+[  10]        :                                       
+[  11]        :                                       
+[  12]        :                                       
+[  13]    0102:                                       .startup
+[  14]        :                                       
+[  15]        :                                       ;se asigna valores a los registro al y bl
+[  16]    0102: B0 04                                 MOV     al, 4
+[  17]    0104: B3 01                                 MOV     bl, 1
+[  18]        :                                       ;se realiza la resta al=al-bl
+[  19]    0106: 2A C3                                 SUB     al, bl
+[  20]        :                                       
+[  21]        :                                       ;se mueve el resultado de al al registro dl, se le suma 48 y se muestra en pantalla
+[  22]    0108: 8A D0                                 MOV     dl, al
+[  23]    010A: 80 C2 30                              ADD     dl, 48
+[  24]    010D: B4 02                                 MOV     ah, 02h
+[  25]    010F: CD 21                                 INT     21h
+[  26]        :                                       
+[  27]        :                                       
+[  28]        :                                       
+[  29]    0111: B8 07 0C                              MOV     ax,0c07h
+[  30]    0114: CD 21                                 INT     21h
+[  31]    0116: B8 00 4C CD 21                        .exit
+[  32]        :                                       end
+[  33]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================

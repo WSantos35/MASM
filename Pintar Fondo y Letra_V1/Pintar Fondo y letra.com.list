@@ -1,0 +1,114 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+Pintar Fondo y letra.com -- emu8086 assembler version: 4.08  
+ 
+[ 28/07/2019  --  7:07:41 p. m. ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       
+[   2]        :                                       
+[   3]        :                                       .model tiny
+[   4]        :                                       
+[   5]    0100: EB 00                                 .data
+[   6]        :                                       
+[   7]    0102:                                       .code
+[   8]        :                                       
+[   9]        :                                       imprimir MACRO escribir,x,y
+[  10]        :                                       MOV     dh, x
+[  11]        :                                       MOV     dl, y
+[  12]        :                                       MOV     bh, 00d
+[  13]        :                                       MOV     ah, 02h
+[  14]        :                                       INT     10h
+[  15]        :                                       
+[  16]        :                                       MOV     ah,9
+[  17]        :                                       LEA     dx,escribir
+[  18]        :                                       INT     21h
+[  19]        :                                       ENDM
+[  20]        :                                       
+[  21]        :                                       
+[  22]    0102:                                       .startup
+[  23]        :                                       
+[  24]        :                                       
+[  25]        :                                       ;    MOV     ax, 0600h
+[  26]        :                                       ;    MOV     bh, 50h             ;color fondo y letra
+[  27]        :                                       ;    MOV     ch, 0               ;punto inicial hacia abajo
+[  28]        :                                       ;    MOV     cl, 0               ;punto inicial hacia la derecha
+[  29]        :                                       ;    MOV     dh, 5              ;punto final hacia abajo
+[  30]        :                                       ;    MOV     dl, 79              ;punto final hacia la derecha
+[  31]        :                                       ;    INT     10h
+[  32]        :                                       
+[  33]        :                                       
+[  34]        :                                       ;Dibujando una Bandera
+[  35]        :                                       
+[  36]        :                                       
+[  37]        :                                       ;1 franja (azul)
+[  38]    0102: B8 00 06                              MOV     ax, 0600h
+[  39]    0105: B7 97                                 MOV     bh, 97h
+[  40]    0107: B9 00 00                              MOV     cx, 0000h
+[  41]    010A: BA 4F 03                              MOV     dx, 034fh
+[  42]    010D: CD 10                                 INT     10h
+[  43]        :                                       
+[  44]        :                                       ;2 franja (blanca)
+[  45]    010F: B8 00 06                              MOV     ax, 0600h
+[  46]    0112: B7 70                                 MOV     bh, 70h
+[  47]    0114: B9 00 04                              MOV     cx, 0400h
+[  48]    0117: BA 4F 07                              MOV     dx, 074fh
+[  49]    011A: CD 10                                 INT     10h
+[  50]        :                                       
+[  51]        :                                       
+[  52]        :                                       ;3 franja (roja)
+[  53]    011C: B8 00 06                              MOV     ax, 0600h
+[  54]    011F: B7 47                                 MOV     bh, 47h
+[  55]    0121: B9 00 08                              MOV     cx, 0800h
+[  56]    0124: BA 4F 0B                              MOV     dx, 0B4fh
+[  57]    0127: CD 10                                 INT     10h
+[  58]        :                                       
+[  59]        :                                       ;4 franja (azul)
+[  60]    0129: B8 00 06                              MOV     ax, 0600h
+[  61]    012C: B7 47                                 MOV     bh, 47h
+[  62]    012E: B9 00 0C                              MOV     cx, 0c00h
+[  63]    0131: BA 4F 10                              MOV     dx, 104fh
+[  64]    0134: CD 10                                 INT     10h
+[  65]        :                                       
+[  66]        :                                       
+[  67]        :                                       ;5 franja (azul)
+[  68]    0136: B8 00 06                              MOV     ax, 0600h
+[  69]    0139: B7 70                                 MOV     bh, 70h
+[  70]    013B: B9 00 11                              MOV     cx, 1100h
+[  71]    013E: BA 4F 14                              MOV     dx, 144fh
+[  72]    0141: CD 10                                 INT     10h
+[  73]        :                                       
+[  74]        :                                       ;6 franja (azul)
+[  75]    0143: B8 00 06                              MOV     ax, 0600h
+[  76]    0146: B7 97                                 MOV     bh, 97h
+[  77]    0148: B9 00 15                              MOV     cx, 1500h
+[  78]    014B: BA 4F 18                              MOV     dx, 184fh
+[  79]    014E: CD 10                                 INT     10h
+[  80]        :                                       
+[  81]        :                                       
+[  82]    0150: B8 00 06                              MOV     ax, 0600h
+[  83]    0153: B7 50                                 MOV     bh, 50h
+[  84]    0155: B5 00                                 MOV     ch, 0
+[  85]    0157: B1 00                                 MOV     cl, 0
+[  86]    0159: B6 19                                 MOV     dh, 25
+[  87]    015B: B2 14                                 MOV     dl, 20
+[  88]    015D: CD 10                                 INT     10h
+[  89]        :                                       
+[  90]        :                                       
+[  91]        :                                       
+[  92]    015F: B8 07 0C                              MOV     ax,0c07h
+[  93]    0162: CD 21                                 INT     21h
+[  94]    0164: B8 00 4C CD 21                        .exit
+[  95]        :                                       end
+[  96]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================

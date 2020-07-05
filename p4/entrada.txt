@@ -1,0 +1,14 @@
+<arqui1>
+	<Operacion1>
+		1! + 2! + 3! + 30 * 3;
+	</Operacion1>
+	<Operacion2>
+		2 ** 2 ** 2 ** 2 - 256;
+	</Operacion2>
+	<Operacion3>
+		8 * 1 % 1 + 8;
+	</Operacion3>
+	<Operacion4>
+		0 * 0 - 0 + 0 % 0! + 0!; 
+	</Operacion4>
+</arqui1>

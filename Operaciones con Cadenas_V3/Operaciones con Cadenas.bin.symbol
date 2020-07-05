@@ -1,0 +1,19 @@
+< THE SYMBOL TABLE >  Operaciones con Cadenas.bin  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+MSG0                     	00003     	1         	VAR       	(NOSEG)   
+MSG1                     	0003B     	1         	VAR       	(NOSEG)   
+MSG2                     	0005B     	1         	VAR       	(NOSEG)   
+MSG3                     	00075     	1         	VAR       	(NOSEG)   
+SALTO                    	00094     	1         	VAR       	(NOSEG)   
+CADENAO                  	00096     	1         	VAR       	(NOSEG)   
+CADENAM                  	000AA     	1         	VAR       	(NOSEG)   
+INICIO                   	000BE     	-1        	LABEL     	(NOSEG)   
+CAPTURAR                 	000D7     	-1        	LABEL     	(NOSEG)   
+RESULTADO                	000EA     	-1        	LABEL     	(NOSEG)   
+FIN                      	00106     	-1        	LABEL     	(NOSEG)   
+===================================================================================================
+[ 30/07/2019  --  3:56:34 p. m. ] 
+< END >
+ 

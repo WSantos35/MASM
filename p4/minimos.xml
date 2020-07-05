@@ -1,0 +1,14 @@
+<arqui1>
+	<Operacion1>
+		900 + 99 - 900 * 1 / 1;
+	</Operacion1>
+	<Operacion2>
+		1 - 1 + 0 * 11 - 0;
+	</Operacion2>
+	<Operacion3>
+		2 + 2 + 2 * 2 * 2 / 2;
+	</Operacion3>
+	<Operacion4>
+		3 / 3 / 1 * 1;
+	</Operacion4>
+</arqui1>

@@ -1,0 +1,37 @@
+;Programa que divide numeros entre 10
+.model tiny
+
+.data
+
+.code
+
+imprimirDigito MACRO numero
+MOV     dl, numero
+ADD     dl, 48
+
+MOV     ah, 02h
+INT     21h
+ENDM
+
+.startup
+
+MOV     ax, 1234
+MOV     cl, 10
+
+bucle:
+DIV     cl              ;el residuo en ah y el cociente en al
+MOV     bx, ax
+imprimirDigito ah
+MOV     ax, bx
+MOV     ah, 0
+cmp     al, 0
+ja bucle
+
+salir:
+MOV     ax,0c07h
+INT     21h
+
+.exit
+
+end
+

@@ -1,0 +1,56 @@
+//=========== _calificacion _practica3 _02/10/2019 =================//
+áéíóú
+ÁÉÍÓÚ
+//============== Diptongos ===============================
+* Diptongo Creciente: Una Vocal Cerrada Seguida De Una Vocal Abierta . Por Ejemplo:
+Comedia
+Tierra
+Piojo
+
+* Diptongo Decreciente: Una Vocal Abierta Seguida De Una Vocal Cerrada . Por Ejemplo:
+Pausa
+Paisaje
+Feudo
+
+Baile  , Airoso  , Traidor  , Zaire
+Gaucho  , Aullar  , Causa 
+Boina  , Androide  , Coincidir 
+Piano  , Caricia  , Anciano  , Asia 
+
+//============== Hiatos ===================================
+Raíz Frío Etíope
+Cocaína Período Lío
+Extraíble Judío Mío
+Estantería Río Ahínco
+Etiología Sombrío Ahorrar
+
+Búho Zoológico Arqueólogo
+Alcohol Caoba Teatro
+Ahorcar Aéreo Deseo
+Albahaca Héroe Baúl
+
+Maíz Caserío Raíz
+País Ataúd Estío
+Corría Confío Reír
+Tranvía Caída Maíz María
+
+//============= Triptongos =========================
+Amortiguáis	Cuautepec	Hueitlatoani
+Anunciéis	Cuautitlán	Lieis
+Apreciéis	Cuautla	Limpiáis
+Apremiéis	Despreciéis	Limpiauñas
+Arreciáis	Dioico	Luau
+Asediéis	Efectuéis	Menospreciáis
+Asociáis	Enunciéis	Miau
+Atrofiéis	Enviciáis	Náhuatle
+Averiéis	Envidiéis	Paraguay
+Averiguáis	Estudiéis	Parodiéis
+
+//================= Buscar Y Reemplazar
+Es Importante Tener En Cuenta Que Los Sistemas Operativos Funcionan Tanto En Las Computadoras Como En Otros Dispositivos Electrónicos Que Usan Microprocesadores (  Teléfonos Móviles  , Reproductores De Dvd , Etc . ) . En El Caso De Windóws , Su Versión Estándar Funciona Con Computadoras , Aunque También Existe Una Versión Para Teléfonos ( Windóws Mobile ) .
+
+Precisamente En El Año 2013 Este Software Se Encuentra Celebrando Su Treinta Aniversario Pues Fue El 10 De Noviembre De 1983 Cuando Bill Gates Se Animó A Presentar A Aquel . No Obstante , Es Cierto Que No Sería Hasta Dos Años Más Tarde Cuando El Citado Producto No Comenzó A Comercializarse En Todo El Mundo .
+
+En Aquel Momento Llegó Al Mercado Presentándose Como Una Extensión Del Conocido Sistema Ms-Dos Y Con Una Serie De Características Entre Las Que Destacaba Que El Usuario Se Veía Favorecido Por Las Utilidades Que Tenía A Su Disposición Así Como La Facilidad De Manejo De Las Mismas .
+
+Desde Aquel Entonces Hasta Nuestros Días Microsoft Windóws Ha Presentado Diversas Versiones Con El Claro Objetivo De Ir Adaptándose A Los Tiempos Y , Sobre Todo , A Las Necesidades Que Tenía El Usuario En Todo Momento . Así , Entre Aquellas Tendríamos Que Destacar Windóws Nt , Windóws 95 , Windóws 98 , Windóws 2000 , Windóws Xp , Windóws Vista , Windóws 7 Y Windóws 8 , Que Es La última Hasta El Momento .

@@ -1,0 +1,108 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+Comparar numeros con Condiciones.exe -- emu8086 assembler version: 4.08  
+ 
+[ 30/07/2019  --  4:51:00 p. m. ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       ;Programa que compara dos numeros para verificar cual es mayor, menor o igual y muestra un mensaje en pantalla
+[   2]        :                                       .model small
+[   3]        :                                       
+[   4]        :                                       .data
+[   5]        :                                       
+[   6]    0000: 05                                    num1 db 5
+[   7]    0001: 08                                    num2 db 8
+[   8]    0002: 4E 75 6D 65 72 6F 73 20 69 67 75 61   msg1 db "Numeros iguales","$"
+                6C 65 73 24                         
+[   9]    0012: 4E 75 6D 65 72 6F 20 31 20 6D 61 79   msg2 db "Numero 1 mayor","$"
+                6F 72 24                            
+[  10]    0021: 4E 75 6D 65 72 6F 20 32 20 6D 61 79   msg3 db "Numero 2 mayor","$"
+                6F 72 24                            
+[  11]        :                                       
+[  12]        :                                       .code
+[  13]        :                                       
+[  14]    0030: BA 00 00 8E DA                        .startup
+[  15]        :                                       
+[  16]    0035: A0 00 00                              MOV     al,num1
+[  17]        :                                       
+[  18]    0038: 3A 06 01 00                           CMP     al,num2
+[  19]        :                                       
+[  20]    003C: 72 18                                 JC      menor
+[  21]    003E: 74 04                                 JZ      igual
+[  22]    0040: 75 0B                                 JNZ     mayor       ;AL IGUAL QUE JA SOLO SE EJECUTA SI AL>NUM2
+[  23]    0042: EB 19                                 JMP     salir
+[  24]        :                                       
+[  25]    0044:                                       igual:
+[  26]    0044: B4 09                                 MOV     ah, 09h
+[  27]    0046: BA 02 00                              MOV     dx, offset msg1
+[  28]    0049: CD 21                                 INT     21h
+[  29]    004B: EB 10                                 JMP     salir
+[  30]        :                                       
+[  31]    004D:                                       mayor:
+[  32]    004D: B4 09                                 MOV     ah, 09h
+[  33]    004F: BA 12 00                              MOV     dx, offset msg2
+[  34]    0052: CD 21                                 INT     21h
+[  35]    0054: EB 07                                 JMP     salir
+[  36]        :                                       
+[  37]    0056:                                       menor:
+[  38]    0056: B4 09                                 MOV     ah, 09h
+[  39]    0058: BA 21 00                              MOV     dx, offset msg3
+[  40]    005B: CD 21                                 INT     21h
+[  41]        :                                       
+[  42]        :                                       
+[  43]    005D:                                       salir:
+[  44]    005D: B8 07 0C                              MOV     ax, 0c07h
+[  45]    0060: CD 21                                 INT     21h
+[  46]    0062: B8 00 4C CD 21                        .exit
+[  47]        :                                       
+[  48]        :                                       
+[  49]        :                                       end
+[  50]        :                                       
+ 
+===================================================================================================
+ 
+EXE HEADER - bytes from 0000 to 01FF inclusive.
+
+0000: 4D      -   exe signature (M)
+0001: 5A      -   exe signature (Z)
+0002: 67      -   bytes on last page (l.byte)
+0003: 00      -   bytes on last page (h.byte)
+0004: 02      -   512 byte pages in file (l.byte)
+0005: 00      -   512 byte pages in file (h.byte)
+0006: 01      -   relocations (l.byte)
+0007: 00      -   relocations (h.byte)
+0008: 20      -   paragraphs in header (l.byte)
+0009: 00      -   paragraphs in header (h.byte)
+000A: 00      -   minimum memory (l.byte)
+000B: 00      -   minimum memory (h.byte)
+000C: FF      -   maximum memory (l.byte)
+000D: FF      -   maximum memory (h.byte)
+000E: 00      -   SS - stack segment (l.byte)
+000F: 00      -   SS - stack segment (h.byte)
+0010: 00      -   SP - stack pointer (l.byte)
+0011: 00      -   SP - stack pointer (h.byte)
+0012: 5E      -   check sum (l.byte)
+0013: 26      -   check sum (h.byte)
+0014: 00      -   IP - instruction pointer (l.byte)
+0015: 00      -   IP - instruction pointer (h.byte)
+0016: 03      -   CS - code segment (l.byte)
+0017: 00      -   CS - code segment (h.byte)
+0018: 1E      -   relocation table adress (l.byte)
+0019: 00      -   relocation table adress (h.byte)
+001A: 00      -   overlay number (l.byte)
+001B: 00      -   overlay number (h.byte)
+001C: 01      -   signature (l.byte)
+001D: 00      -   signature (h.byte)
+001E: 01      -   relocation table - offset inside segment (l.byte)
+001F: 00      -   relocation table - offset inside segment (h.byte)
+0020: 03      -   relocation table - segment anchor (l.byte)
+0021: 00      -   relocation table - segment anchor (h.byte)
+0022 to 01FF  -   reserved relocation area  (00) 
+
+
+
+
+===================================================================================================

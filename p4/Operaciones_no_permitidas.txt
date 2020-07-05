@@ -1,0 +1,6 @@
+ya que los valores que guarda nuestro arreglo es tambien donde verifica las 
+operaciones, por lo tanto no se permite estos digitos ya que si no
+lo tomaria como operandos y no como numeros
+33,36,37,42,43,45,47,
+lo mejor seria usar numeros en el rango
+[0-31] y [49-2555]

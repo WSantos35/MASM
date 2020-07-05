@@ -1,0 +1,14 @@
+< THE SYMBOL TABLE >  Factorial numero.exe  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+STACK                    	00000     	-5        	SEGMENT   	(ITSELF)  
+DATA                     	00010     	-5        	SEGMENT   	(ITSELF)  
+RESULTADO                	00000     	1         	VAR       	data      
+CODE                     	00011     	-5        	SEGMENT   	(ITSELF)  
+STARTUP                  	00000     	-1        	LABEL     	code      
+CICLO                    	00008     	-1        	LABEL     	code      
+===================================================================================================
+[ 2/08/2019  --  10:34:51 a. m. ] 
+< END >
+ 

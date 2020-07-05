@@ -1,0 +1,15 @@
+< THE SYMBOL TABLE >  Comparando numeros con jumpers.com  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+A                        	00102     	-1        	LABEL     	(NOSEG)   
+B                        	00110     	-1        	LABEL     	(NOSEG)   
+CODE                     	00121     	-1        	LABEL     	(NOSEG)   
+STARTUP                  	00121     	-1        	LABEL     	(NOSEG)   
+SONIGUALES               	0012B     	-1        	LABEL     	(NOSEG)   
+SONDIFERENTES            	00134     	-1        	LABEL     	(NOSEG)   
+SALIR                    	0013D     	-1        	LABEL     	(NOSEG)   
+===================================================================================================
+[ 28/07/2019  --  4:27:48 p. m. ] 
+< END >
+ 

@@ -1,0 +1,83 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+Operaciones con Cadenas.bin -- emu8086 assembler version: 4.08  
+ 
+[ 30/07/2019  --  3:56:34 p. m. ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       
+[   2]        :                                       
+[   3]        :                                       imprimir MACRO  texto
+[   4]        :                                       MOV     ah,09h
+[   5]        :                                       MOV     dx, offset texto
+[   6]        :                                       INT     21h
+[   7]        :                                       ENDM
+[   8]        :                                       
+[   9]    0000: E9 BB 00                              JMP inicio
+[  10]        :                                       
+[  11]        :                                       
+[  12]    0003: 50 72 6F 67 72 61 6D 61 20 70 61 72   msg0    db "Programa para convertir letras minusculas a mayusculas.$"
+                61 20 63 6F 6E 76 65 72 74 69 72 20 
+                6C 65 74 72 61 73 20 6D 69 6E 75 73 
+                63 75 6C 61 73 20 61 20 6D 61 79 75 
+                73 63 75 6C 61 73 2E 24             
+[  13]    003B: 0A 0D 49 6E 67 72 65 73 65 20 75 6E   msg1    db 10,13, "Ingrese una cadena de texto: $"
+                61 20 63 61 64 65 6E 61 20 64 65 20 
+                74 65 78 74 6F 3A 20 24             
+[  14]    005B: 0A 0D 4C 61 20 63 61 64 65 6E 61 20   msg2    db 10,13, "La cadena original es: $"
+                6F 72 69 67 69 6E 61 6C 20 65 73 3A 
+                20 24                               
+[  15]    0075: 0A 0D 4C 61 20 63 61 64 65 6E 61 20   msg3    db 10,13, "La cadena en Mayusculas es: $"
+                65 6E 20 4D 61 79 75 73 63 75 6C 61 
+                73 20 65 73 3A 20 24                
+[  16]    0094: 0A 0D                                 salto   db 10,13
+[  17]    0096: 24 24 24 24 24 24 24 24 24 24 24 24   cadenaO db  20 dup("$")
+                24 24 24 24 24 24 24 24             
+[  18]    00AA: 24 24 24 24 24 24 24 24 24 24 24 24   cadenaM db  20 dup("$")
+                24 24 24 24 24 24 24 24             
+[  19]        :                                       
+[  20]    00BE:                                       inicio:
+[  21]    00BE: B4 09 BA 03 00 CD 21                  imprimir msg0
+[  22]    00C5: B4 09 BA 94 00 CD 21                  imprimir salto
+[  23]    00CC: B4 09 BA 3B 00 CD 21                  imprimir msg1
+[  24]        :                                       ;lectura de la cdena de texto
+[  25]    00D3: B4 01                                 MOV     ah, 1  ;lectura de caracter por caracter
+[  26]    00D5: 33 F6                                 XOR     si, si
+[  27]        :                                       
+[  28]        :                                       
+[  29]        :                                       
+[  30]    00D7:                                       capturar:
+[  31]    00D7: CD 21                                 INT     21h
+[  32]    00D9: 3C 0D                                 CMP     al, 13 ;comprobando si el registro al es un enter:13
+[  33]    00DB: 74 0D                                 JZ      resultado
+[  34]    00DD: 88 84 96 00                           MOV     cadenaO[si], al
+[  35]    00E1: 2C 20                                 SUB     al, 32  ;se resta 32 posiciones para convertir a mayuscula
+[  36]    00E3: 88 84 AA 00                           MOV     cadenaM[si], al
+[  37]    00E7: 46                                    INC     si
+[  38]    00E8: EB ED                                 JMP     capturar
+[  39]        :                                       
+[  40]        :                                       
+[  41]        :                                       
+[  42]    00EA:                                       resultado:
+[  43]        :                                       ;imprimir salto
+[  44]    00EA: B4 09 BA 5B 00 CD 21                  imprimir msg2
+[  45]    00F1: B4 09 BA 96 00 CD 21                  imprimir cadenaO
+[  46]        :                                       ;imprimir salto
+[  47]    00F8: B4 09 BA 75 00 CD 21                  imprimir msg3
+[  48]    00FF: B4 09 BA AA 00 CD 21                  imprimir cadenaM
+[  49]        :                                       
+[  50]        :                                       
+[  51]    0106:                                       fin:
+[  52]    0106: C3                                    RET
+[  53]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================

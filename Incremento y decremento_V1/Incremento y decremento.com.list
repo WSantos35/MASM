@@ -1,0 +1,52 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+Incremento y decremento.com -- emu8086 assembler version: 4.08  
+ 
+[ 28/07/2019  --  3:55:51 p. m. ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       ;Programa que muestra como realizar decremento e incremento
+[   2]        :                                       ;esto se realiza con las instrucciones INC y DEC
+[   3]        :                                       .model tiny
+[   4]    0100: EB 00                                 .data
+[   5]    0102:                                       .code
+[   6]    0102:                                       .startup
+[   7]        :                                       
+[   8]        :                                       ;se le asigna un valor al registro al
+[   9]    0102: B0 05                                 MOV     al, 5
+[  10]        :                                       ;se incrementa
+[  11]    0104: FE C0                                 INC     al
+[  12]    0106: FE C0                                 INC     al
+[  13]        :                                       
+[  14]        :                                       ;se mueve el dato del registro al al dl y se le suma 48
+[  15]    0108: 8A D0                                 MOV      dl, al
+[  16]    010A: 80 C2 30                              ADD      dl, 48
+[  17]        :                                       
+[  18]        :                                       ;se muestra el registro
+[  19]    010D: B4 02                                 MOV      ah, 02h
+[  20]    010F: CD 21                                 INT      21h
+[  21]        :                                       
+[  22]        :                                       ;se decrementa
+[  23]    0111: FE CA                                 DEC      dl
+[  24]        :                                       
+[  25]        :                                       ;se muestra el registro decrementado
+[  26]    0113: B4 02                                 MOV      ah, 02h
+[  27]    0115: CD 21                                 INT      21h
+[  28]        :                                       
+[  29]    0117: B8 07 0C                              MOV      ax, 0c07h
+[  30]    011A: CD 21                                 INT      21h
+[  31]        :                                       
+[  32]    011C: B8 00 4C CD 21                        .exit
+[  33]        :                                       end
+[  34]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================

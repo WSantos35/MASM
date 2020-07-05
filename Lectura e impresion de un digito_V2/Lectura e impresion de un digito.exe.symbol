@@ -1,0 +1,15 @@
+< THE SYMBOL TABLE >  Lectura e impresion de un digito.exe  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+STACK                    	00000     	-5        	SEGMENT   	(ITSELF)  
+DATA                     	00010     	-5        	SEGMENT   	(ITSELF)  
+MSG                      	00000     	1         	VAR       	data      
+CADENA                   	0001E     	1         	VAR       	data      
+NUM                      	00033     	1         	VAR       	data      
+CODE                     	00014     	-5        	SEGMENT   	(ITSELF)  
+STARTUP                  	00000     	-1        	LABEL     	code      
+===================================================================================================
+[ 29/07/2019  --  4:51:11 p. m. ] 
+< END >
+ 

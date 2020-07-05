@@ -1,0 +1,17 @@
+< THE SYMBOL TABLE >  Ingresar un numero de dos digitos e imprimirlo.exe  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+STACK                    	00000     	-5        	SEGMENT   	(ITSELF)  
+DATA                     	00010     	-5        	SEGMENT   	(ITSELF)  
+U                        	00000     	1         	VAR       	data      
+D                        	00001     	1         	VAR       	data      
+N                        	00002     	1         	VAR       	data      
+MSG                      	00003     	1         	VAR       	data      
+MSG1                     	00019     	1         	VAR       	data      
+CODE                     	00013     	-5        	SEGMENT   	(ITSELF)  
+STARTUP                  	00000     	-1        	LABEL     	code      
+===================================================================================================
+[ 2/08/2019  --  10:50:00 a. m. ] 
+< END >
+ 

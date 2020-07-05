@@ -1,0 +1,23 @@
+.model tiny
+
+.data
+
+
+
+.code
+
+
+
+.startup
+
+MOV     al, 5
+MOV     bl, 1
+ADD     al, bl
+
+
+
+MOV     ax, 0c07h
+INT     21h
+.exit
+end
+

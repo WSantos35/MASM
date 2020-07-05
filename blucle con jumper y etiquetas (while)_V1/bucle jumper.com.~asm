@@ -1,0 +1,28 @@
+.model tiny
+
+.data
+
+
+.code
+
+imprimirDigito MACRO parametro
+MOV     dl, parametro+48
+MOV     ah, 02h
+INT     21h
+JMP     while
+ENDM
+
+
+.startup
+
+
+while:
+imprimirDigito 3
+
+
+
+MOV     ax,0c07h
+INT     21h
+.exit
+end
+

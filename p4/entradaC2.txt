@@ -1,0 +1,42 @@
+SS<arq{ui1>
+
+<Operacion1to>
+	10*9/2**5+4--3-5!;
+</Operacion1>
+
+<Operacion2>
+	5+2.32*8%2;
+</Oper#acion2>
+
+<Operacion3>
+	0.25-58+1!+0!l;
+</Operºacion3>
+
+<Op=eracion4>
+	10**2-5%4+8;
+</Operacion4s>
+
+<Operacion5to>
+	10*9/2**5+4--3-5!;
+</Operacion5>
+
+<Operacion6>
+	5+2.32*8%2;
+</Oper#acion6>
+
+<Operacion748>
+	0.25-58+1!+0!l--*5;
+</Operºacion7>
+
+<Op=eracion8>
+	10**2-5%4+8;
+</Operacion8s>
+
+<Operacion948>
+	0.25-58+1!+0!l--*5;
+</Operºacion9>
+
+<Op=eracion10>
+	10**2-5%4+8;
+</Operacion10s>
+</*arqui1)>

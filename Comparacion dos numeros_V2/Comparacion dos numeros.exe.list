@@ -1,0 +1,96 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+Comparacion dos numeros.exe -- emu8086 assembler version: 4.08  
+ 
+[ 2/08/2019  --  1:09:22 p. m. ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       .model small
+[   2]        :                                       
+[   3]        :                                       .stack
+[   4]        :                                       
+[   5]        :                                       .data
+[   6]    0100: 65 6C 20 6D 65 6E 6F 72 20 65 73 20   msg1 db "el menor es bx",10,13,"$"
+                62 78 0A 0D 24                      
+[   7]    0111: 65 6C 20 6D 65 6E 6F 72 20 65 73 20   msg2 db "el menor es dx",10,13,"$"
+                64 78 0A 0D 24                      
+[   8]        :                                       
+[   9]        :                                       .code
+[  10]        :                                       
+[  11]    0130: BA 10 00 8E DA                        .startup
+[  12]    0135: BA 01 00                              MOV     dx, 1
+[  13]    0138: BB 03 00                              MOV     bx, 3
+[  14]        :                                       
+[  15]    013B: 8B C2                                 MOV     ax, dx
+[  16]    013D: 2B D3                                 SUB     dx, bx
+[  17]        :                                       
+[  18]    013F: 78 09                                 JS      menores_a
+[  19]        :                                       
+[  20]    0141: B4 09                                 MOV     ah, 09h
+[  21]    0143: BA 00 00                              MOV     dx, offset msg1
+[  22]    0146: CD 21                                 INT     21h
+[  23]    0148: EB 09                                 JMP     salir
+[  24]        :                                       
+[  25]    014A:                                       menores_a:
+[  26]        :                                       
+[  27]    014A: B4 09                                 MOV     ah, 09h
+[  28]    014C: BA 11 00                              MOV     dx, offset msg2
+[  29]    014F: CD 21                                 INT     21h
+[  30]        :                                       
+[  31]    0151: EB 00                                 JMP salir
+[  32]        :                                       
+[  33]    0153:                                       salir:
+[  34]    0153: B8 07 0C                              MOV     ax, 0c07h
+[  35]    0156: CD 21                                 INT     21h
+[  36]    0158: B8 00 4C CD 21                        .exit
+[  37]        :                                       
+[  38]        :                                       end
+[  39]        :                                       
+ 
+===================================================================================================
+ 
+EXE HEADER - bytes from 0000 to 01FF inclusive.
+
+0000: 4D      -   exe signature (M)
+0001: 5A      -   exe signature (Z)
+0002: 5D      -   bytes on last page (l.byte)
+0003: 01      -   bytes on last page (h.byte)
+0004: 02      -   512 byte pages in file (l.byte)
+0005: 00      -   512 byte pages in file (h.byte)
+0006: 01      -   relocations (l.byte)
+0007: 00      -   relocations (h.byte)
+0008: 20      -   paragraphs in header (l.byte)
+0009: 00      -   paragraphs in header (h.byte)
+000A: 00      -   minimum memory (l.byte)
+000B: 00      -   minimum memory (h.byte)
+000C: FF      -   maximum memory (l.byte)
+000D: FF      -   maximum memory (h.byte)
+000E: 00      -   SS - stack segment (l.byte)
+000F: 00      -   SS - stack segment (h.byte)
+0010: 00      -   SP - stack pointer (l.byte)
+0011: 01      -   SP - stack pointer (h.byte)
+0012: 77      -   check sum (l.byte)
+0013: 84      -   check sum (h.byte)
+0014: 00      -   IP - instruction pointer (l.byte)
+0015: 00      -   IP - instruction pointer (h.byte)
+0016: 13      -   CS - code segment (l.byte)
+0017: 00      -   CS - code segment (h.byte)
+0018: 1E      -   relocation table adress (l.byte)
+0019: 00      -   relocation table adress (h.byte)
+001A: 00      -   overlay number (l.byte)
+001B: 00      -   overlay number (h.byte)
+001C: 01      -   signature (l.byte)
+001D: 00      -   signature (h.byte)
+001E: 01      -   relocation table - offset inside segment (l.byte)
+001F: 00      -   relocation table - offset inside segment (h.byte)
+0020: 13      -   relocation table - segment anchor (l.byte)
+0021: 00      -   relocation table - segment anchor (h.byte)
+0022 to 01FF  -   reserved relocation area  (00) 
+
+
+
+
+===================================================================================================

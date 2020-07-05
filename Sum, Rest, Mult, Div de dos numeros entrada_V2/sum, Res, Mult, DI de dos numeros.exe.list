@@ -1,0 +1,143 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+sum, Res, Mult, DI de dos numeros.exe -- emu8086 assembler version: 4.08  
+ 
+[ 2/08/2019  --  9:56:21 a. m. ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       
+[   2]        :                                       .model small
+[   3]        :                                       
+[   4]        :                                       .stack
+[   5]        :                                       
+[   6]        :                                       .data
+[   7]    0100: 00                                    num1    db 0
+[   8]    0101: 00                                    num2    db 0
+[   9]    0102: 00                                    Resultado db 0
+[  10]    0103: 0A 0D 53 75 6D 61 20 65 73 3A 20 24   mensaje0    db 10,13,"Suma es: ","$"
+                                                    
+[  11]    010F: 0A 0D 52 65 73 74 61 20 65 73 3A 20   mensaje1    db 10,13,"Resta es: ","$"
+                24                                  
+[  12]    011C: 0A 0D 4D 75 6C 74 69 70 6C 69 63 61   mensaje2    db 10,13,"Multiplicacion es: ","$"
+                63 69 6F 6E 20 65 73 3A 20 24       
+[  13]    0132: 0A 0D 44 69 76 69 73 69 6F 6E 20 65   mensaje3    db 10,13,"Division es: ","$"
+                73 3A 20 24                         
+[  14]    0142: 0A 0D 49 6E 67 72 65 73 65 20 75 6E   mensaje4    db 10,13,"Ingrese un numero: ","$"
+                20 6E 75 6D 65 72 6F 3A 20 24       
+[  15]        :                                       
+[  16]        :                                       .code
+[  17]    0160: BA 10 00 8E DA                        .startup
+[  18]        :                                       
+[  19]    0165: B4 09                                 MOV     ah, 09h
+[  20]    0167: BA 42 00                              MOV     dx, offset mensaje4
+[  21]    016A: CD 21                                 INT     21h
+[  22]        :                                       
+[  23]    016C: B4 01                                 MOV     ah, 01h
+[  24]    016E: CD 21                                 INT     21h
+[  25]    0170: 2C 30                                 SUB     al, 30h
+[  26]    0172: A2 00 00                              MOV     num1, al
+[  27]        :                                       
+[  28]    0175: B4 09                                 MOV     ah, 09h
+[  29]    0177: BA 42 00                              MOV     dx, offset mensaje4
+[  30]    017A: CD 21                                 INT     21h
+[  31]        :                                       
+[  32]    017C: B4 01                                 MOV     ah, 01h
+[  33]    017E: CD 21                                 INT     21h
+[  34]    0180: 2C 30                                 SUB     al, 30h
+[  35]    0182: A2 01 00                              MOV     num2, al
+[  36]        :                                       
+[  37]        :                                       ;SUMA
+[  38]    0185: A0 00 00                              MOV     al, num1
+[  39]    0188: 02 06 01 00                           ADD     al, num2
+[  40]    018C: A2 02 00                              MOV     Resultado, al
+[  41]        :                                       
+[  42]    018F: B4 09                                 MOV     ah, 09h
+[  43]    0191: BA 03 00                              MOV     dx, offset mensaje0
+[  44]    0194: CD 21                                 INT     21h
+[  45]        :                                       
+[  46]    0196: A0 02 00                              MOV     al, Resultado           ;en al se mueve el resultado que se encuentra en hexademal
+[  47]    0199: D4 0A                                 AAM                             ;desempaqueta lo que se encuentra en ax que es el resultado a demal
+[  48]    019B: 8B D8                                 MOV     bx, ax                  ;guarda en bx lo que esta en ax ya que se utilizara el registro ax para int21h
+[  49]    019D: B4 02                                 MOV     ah, 02h                 ;salida de caracteres
+[  50]    019F: 8A D7                                 MOV     dl, bh                  ;pasa el numero mayor a dl, ya que lo que esta en dl es lo que va a salir
+[  51]    01A1: 80 C2 30                              ADD     dl, 30h                 ;le suma 30 ya que debe estar en ascii
+[  52]    01A4: CD 21                                 INT     21h                     ;llamda la int21h para ejecutar la funcion 02h para el primer digito
+[  53]        :                                       
+[  54]    01A6: B4 02                                 MOV     ah, 02h                 ;realiza lo mismo con el segundo digito del resultado
+[  55]    01A8: 8A D3                                 MOV     dl, bl                  ;el segundo digito se encuentra en el registro bl
+[  56]    01AA: 80 C2 30                              ADD     dl, 30h
+[  57]    01AD: CD 21                                 INT     21h
+[  58]        :                                       
+[  59]        :                                       ;RESTA
+[  60]        :                                       
+[  61]        :                                       
+[  62]        :                                       
+[  63]    01AF: A0 02 00                              MOV     al, Resultado
+[  64]    01B2: D4 0A                                 AAM
+[  65]    01B4: 8B D8                                 MOV     bx, ax
+[  66]    01B6: B4 02                                 MOV     ah, 02h
+[  67]    01B8: 8A D7                                 MOV     dl, bh
+[  68]    01BA: 80 C2 30                              ADD     dl, 30h
+[  69]    01BD: CD 21                                 INT     21h
+[  70]        :                                       
+[  71]    01BF: B4 02                                 MOV     ah, 02h
+[  72]    01C1: 8A D3                                 MOV     dl, bl
+[  73]    01C3: 80 C2 30                              ADD     dl, 30h
+[  74]    01C6: CD 21                                 INT     21h
+[  75]        :                                       
+[  76]        :                                       
+[  77]    01C8:                                       salir:
+[  78]    01C8: B8 07 0C                              MOV     ax, 0c07h
+[  79]    01CB: CD 21                                 INT     21h
+[  80]    01CD: B8 00 4C CD 21                        .exit
+[  81]        :                                       
+[  82]        :                                       end
+[  83]        :                                       
+ 
+===================================================================================================
+ 
+EXE HEADER - bytes from 0000 to 01FF inclusive.
+
+0000: 4D      -   exe signature (M)
+0001: 5A      -   exe signature (Z)
+0002: D2      -   bytes on last page (l.byte)
+0003: 01      -   bytes on last page (h.byte)
+0004: 02      -   512 byte pages in file (l.byte)
+0005: 00      -   512 byte pages in file (h.byte)
+0006: 01      -   relocations (l.byte)
+0007: 00      -   relocations (h.byte)
+0008: 20      -   paragraphs in header (l.byte)
+0009: 00      -   paragraphs in header (h.byte)
+000A: 00      -   minimum memory (l.byte)
+000B: 00      -   minimum memory (h.byte)
+000C: FF      -   maximum memory (l.byte)
+000D: FF      -   maximum memory (h.byte)
+000E: 00      -   SS - stack segment (l.byte)
+000F: 00      -   SS - stack segment (h.byte)
+0010: 00      -   SP - stack pointer (l.byte)
+0011: 01      -   SP - stack pointer (h.byte)
+0012: 79      -   check sum (l.byte)
+0013: AA      -   check sum (h.byte)
+0014: 00      -   IP - instruction pointer (l.byte)
+0015: 00      -   IP - instruction pointer (h.byte)
+0016: 16      -   CS - code segment (l.byte)
+0017: 00      -   CS - code segment (h.byte)
+0018: 1E      -   relocation table adress (l.byte)
+0019: 00      -   relocation table adress (h.byte)
+001A: 00      -   overlay number (l.byte)
+001B: 00      -   overlay number (h.byte)
+001C: 01      -   signature (l.byte)
+001D: 00      -   signature (h.byte)
+001E: 01      -   relocation table - offset inside segment (l.byte)
+001F: 00      -   relocation table - offset inside segment (h.byte)
+0020: 16      -   relocation table - segment anchor (l.byte)
+0021: 00      -   relocation table - segment anchor (h.byte)
+0022 to 01FF  -   reserved relocation area  (00) 
+
+
+
+
+===================================================================================================

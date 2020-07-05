@@ -1,0 +1,120 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+Ingresar un numero de dos digitos e imprimirlo.exe -- emu8086 assembler version: 4.08  
+ 
+[ 2/08/2019  --  10:50:00 a. m. ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       .model small
+[   2]        :                                       
+[   3]        :                                       .stack
+[   4]        :                                       
+[   5]        :                                       
+[   6]        :                                       .data
+[   7]    0100: 00                                    u db 0
+[   8]    0101: 00                                    d db 0
+[   9]    0102: 00                                    n db 0
+[  10]    0103: 0A 0D 49 6E 67 72 65 73 65 20 75 6E   msg db 10,13,"Ingrese un numero: ","$"
+                20 6E 75 6D 65 72 6F 3A 20 24       
+[  11]    0119: 0A 0D 4E 75 6D 65 72 6F 20 49 6E 67   msg1 db 10,13,"Numero Ingresado: ","$"
+                72 65 73 61 64 6F 3A 20 24          
+[  12]        :                                       
+[  13]        :                                       .code
+[  14]        :                                       
+[  15]        :                                       
+[  16]    0130: BA 10 00 8E DA                        .startup
+[  17]        :                                       
+[  18]    0135: B4 09                                 MOV     ah, 09h
+[  19]    0137: BA 03 00                              MOV     dx, offset msg
+[  20]    013A: CD 21                                 INT     21h
+[  21]        :                                       
+[  22]        :                                       
+[  23]    013C: B4 01                                 MOV     ah, 01h
+[  24]    013E: CD 21                                 INT     21h
+[  25]    0140: 2C 30                                 SUB     al, 30h
+[  26]    0142: A2 01 00                              MOV     d, al
+[  27]        :                                       
+[  28]    0145: B4 01                                 MOV     ah, 01h
+[  29]    0147: CD 21                                 INT     21h
+[  30]    0149: 2C 30                                 SUB     al, 30h
+[  31]    014B: A2 00 00                              MOV     u, al
+[  32]        :                                       
+[  33]    014E: A0 01 00                              MOV     al, d
+[  34]    0151: B3 0A                                 MOV     bl, 10
+[  35]    0153: F6 E3                                 MUL     bl
+[  36]    0155: 02 06 00 00                           ADD     al, u
+[  37]    0159: A2 02 00                              MOV     n, al
+[  38]        :                                       
+[  39]    015C: B4 09                                 MOV     ah, 09h
+[  40]    015E: BA 19 00                              MOV     dx, offset msg1
+[  41]    0161: CD 21                                 INT     21h
+[  42]        :                                       
+[  43]    0163: A0 02 00                              MOV     al, n
+[  44]    0166: D4 0A                                 AAM
+[  45]    0168: 8B D8                                 MOV     bx, ax
+[  46]    016A: B4 02                                 MOV     ah, 02h
+[  47]    016C: 8A D7                                 MOV     dl, bh
+[  48]    016E: 80 C2 30                              ADD     dl, 30h
+[  49]    0171: CD 21                                 INT     21h
+[  50]        :                                       
+[  51]    0173: B4 02                                 MOV     ah, 02h
+[  52]    0175: 8A D3                                 MOV     dl, bl
+[  53]    0177: 80 C2 30                              ADD     dl, 30h
+[  54]    017A: CD 21                                 INT     21h
+[  55]        :                                       
+[  56]        :                                       
+[  57]        :                                       
+[  58]    017C: B8 07 0C                              MOV     ax, 0c07h
+[  59]    017F: CD 21                                 INT     21h
+[  60]    0181: B8 00 4C CD 21                        .exit
+[  61]        :                                       
+[  62]        :                                       end
+[  63]        :                                       
+ 
+===================================================================================================
+ 
+EXE HEADER - bytes from 0000 to 01FF inclusive.
+
+0000: 4D      -   exe signature (M)
+0001: 5A      -   exe signature (Z)
+0002: 86      -   bytes on last page (l.byte)
+0003: 01      -   bytes on last page (h.byte)
+0004: 02      -   512 byte pages in file (l.byte)
+0005: 00      -   512 byte pages in file (h.byte)
+0006: 01      -   relocations (l.byte)
+0007: 00      -   relocations (h.byte)
+0008: 20      -   paragraphs in header (l.byte)
+0009: 00      -   paragraphs in header (h.byte)
+000A: 00      -   minimum memory (l.byte)
+000B: 00      -   minimum memory (h.byte)
+000C: FF      -   maximum memory (l.byte)
+000D: FF      -   maximum memory (h.byte)
+000E: 00      -   SS - stack segment (l.byte)
+000F: 00      -   SS - stack segment (h.byte)
+0010: 00      -   SP - stack pointer (l.byte)
+0011: 01      -   SP - stack pointer (h.byte)
+0012: 18      -   check sum (l.byte)
+0013: 76      -   check sum (h.byte)
+0014: 00      -   IP - instruction pointer (l.byte)
+0015: 00      -   IP - instruction pointer (h.byte)
+0016: 13      -   CS - code segment (l.byte)
+0017: 00      -   CS - code segment (h.byte)
+0018: 1E      -   relocation table adress (l.byte)
+0019: 00      -   relocation table adress (h.byte)
+001A: 00      -   overlay number (l.byte)
+001B: 00      -   overlay number (h.byte)
+001C: 01      -   signature (l.byte)
+001D: 00      -   signature (h.byte)
+001E: 01      -   relocation table - offset inside segment (l.byte)
+001F: 00      -   relocation table - offset inside segment (h.byte)
+0020: 13      -   relocation table - segment anchor (l.byte)
+0021: 00      -   relocation table - segment anchor (h.byte)
+0022 to 01FF  -   reserved relocation area  (00) 
+
+
+
+
+===================================================================================================

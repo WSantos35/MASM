@@ -1,0 +1,20 @@
+< THE SYMBOL TABLE >  Comparar numeros con Condiciones.exe  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+DATA                     	00000     	-5        	SEGMENT   	(ITSELF)  
+NUM1                     	00000     	1         	VAR       	data      
+NUM2                     	00001     	1         	VAR       	data      
+MSG1                     	00002     	1         	VAR       	data      
+MSG2                     	00012     	1         	VAR       	data      
+MSG3                     	00021     	1         	VAR       	data      
+CODE                     	00003     	-5        	SEGMENT   	(ITSELF)  
+STARTUP                  	00000     	-1        	LABEL     	code      
+IGUAL                    	00014     	-1        	LABEL     	code      
+MAYOR                    	0001D     	-1        	LABEL     	code      
+MENOR                    	00026     	-1        	LABEL     	code      
+SALIR                    	0002D     	-1        	LABEL     	code      
+===================================================================================================
+[ 30/07/2019  --  4:51:00 p. m. ] 
+< END >
+ 

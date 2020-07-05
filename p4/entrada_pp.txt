@@ -1,0 +1,39 @@
+<arqui1>
+
+<Operacion1>
+	1203*5!+8*3!-5+2*5;
+</Operacion1>
+
+<Operacion2>
+	9-2+3*5/86*110%15;
+</Operacion2>
+
+<Operacion3>
+	500/5*8+3!-115;
+</Operacion3>
+
+<Operacion4>
+	120+2**3+2*362-2!+3;
+</Operacion4>
+
+<Operacion5>
+	18*9/2**5+4-3-5!;
+</Operacion5>
+
+<Operacion6>
+	30+25*1;
+</Operacion6>
+
+<Operacion7>
+	120-20+362*15/110-2;
+</Operacion7>
+
+<Operacion8>
+	1203%5+8*3;
+</Operacion8>
+
+<Operacion9>
+	5!+4!+120*2%5-1;
+</Operacion9>
+
+</arqui1>
